@@ -1,6 +1,14 @@
 {
   "name": "custom-table-angular",
-  "version": "0.0.0",
+  "description": "This package allow you create custom table for Angular",
+  "version": "0.1.0",
+  "keywords": ["typescript", "html", "scss", "angular", "table", "custom", "custom table", "td", "rows", "columns"],
+  "author": "Nikita Runeev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nruneev/angular-table/issues"
+  },
+  "homepage": "https://github.com/nruneev/angular-table",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -9,7 +17,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/animations": "~8.2.14",
     "@angular/common": "~8.2.14",
