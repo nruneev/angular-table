@@ -1,27 +1,33 @@
 # CustomTableAngular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.21.
+This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.14.
+>For install: `npm i custom-table-angular`
 
-## Development server
+## About this package
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+This package allow you create custom table for your web-application. You can add image, svg icon, chart and button.
+For create table you need use tag `nr-table`. 
 
-## Code scaffolding
+This component input one variable:
+* `table` this variable use class `Table`. It is your future table.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+This class include:
+* `title` - name your table (no require); 
+* `headerGroups` - it is array which include fields:
+    * `title` - name of your section (no require);
+    * `headers` - array with names for column;
+* `RowGroup` - it is array which include fields:
+    * `title` - name of your section (no require);
+    * `rows` - array with value for rows.
+    
+For use style: 
+* `--table-header-bg` - set color fo header and hover row;
+* `--std-radius` - set border-radius for header.
+    
+For example: 
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+`<nr-table [table]='table'>
+  <nr-td *nrTdDef="let item; column: 2">
+    <a href="mailto:{{item}}">{{item}}</a>
+  </nr-td>
+</nr-table'>`

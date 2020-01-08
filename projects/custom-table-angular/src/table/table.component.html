@@ -1,0 +1,33 @@
+<h1 *ngIf="table.title">{{table.title}}</h1>
+<div class="card table-wrap">
+  <table>
+    <thead>
+    <tr class="headerGroup" *ngIf="haveHeaderGroupTitles()">
+      <ng-container *ngFor="let headerGroup of table.headerGroups">
+        <th [attr.colspan]="headerGroup.headers.length" class="title">{{headerGroup.title}}</th>
+      </ng-container>
+    </tr>
+    <tr class="headers">
+      <ng-container *ngFor="let headerGroup of table.headerGroups">
+        <th *ngFor="let header of headerGroup.headers; let i = index"
+            [ngClass]="{firstHeader: i === 0, lastHeader: i === headerGroup.headers.length - 1}">
+            {{header}}
+        </th>
+      </ng-container>
+    </tr>
+    </thead>
+    <tbody>
+    <ng-container *ngFor="let rowGroup of table.rowGroups">
+      <th *ngIf="rowGroup.title" [ngClass]="{title:true}" [attr.colspan]="rowGroup.rows.length">{{rowGroup.title}}</th>
+      <tr *ngFor="let row of rowGroup.rows">
+        <td *ngFor="let value of row; let i = index">
+            <ng-container *ngIf="!isCustomColumn(i); else template">{{value}}</ng-container>
+            <ng-template #template>
+                <ng-template [ngTemplateOutlet]="currentCustomColumn.template" [ngTemplateOutletContext]="{$implicit: value}"></ng-template>
+            </ng-template>
+        </td>
+      </tr>
+    </ng-container>
+    </tbody>
+  </table>
+</div>

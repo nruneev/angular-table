@@ -1,0 +1,87 @@
+$borderRadius: var(--std-radius, 5px);
+
+:host {
+    display: block;
+    width: 100%;
+    font-size: 0.875rem;
+    font-weight: bold;
+    color: #B0BEC5;
+}
+
+h1 {
+    color: #455A64;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.title {
+    color: #92A1AB;
+    font-size: 0.875rem;
+    line-height: 2rem;
+    text-align: left;
+    padding: 1rem 0 1rem 1rem;
+}
+
+.headers {
+    background: var(--table-header-bg);
+    color: #92A1AB;
+}
+
+.headers th {
+    text-align: left;
+    padding: 1rem;
+    font-weight: bold;
+    min-width: 50px;
+}
+
+.headers th:first-child {
+    border-top-left-radius: $borderRadius;
+    border-bottom-left-radius: $borderRadius;
+}
+
+.headers th:last-child {
+    border-top-right-radius: $borderRadius;
+    border-bottom-right-radius: $borderRadius;
+    padding-right: 1rem;
+    box-shadow: none;
+}
+
+tbody td {
+    padding: 1rem 0 1rem 1rem;
+    border-bottom: 1px solid #D5DDE2;
+}
+
+.separation {
+    background: red;
+}
+
+tbody td:last-child {
+    padding-right: 0.5rem;
+}
+
+tbody tr:hover {
+    background-color: var(--table-header-bg);
+    transition: background-color 0.1s;
+}
+
+.headerGroup th {
+    text-align: left;
+    padding: 1rem 0 1rem 1rem;
+}
+
+.firstHeader {
+    border-top-left-radius: $borderRadius;
+    border-bottom-left-radius: $borderRadius;
+}
+
+.lastHeader {
+    border-top-right-radius: $borderRadius;
+    border-bottom-right-radius: $borderRadius;
+    box-shadow: inset -0.5rem 0 0 0 #FFF;
+}
